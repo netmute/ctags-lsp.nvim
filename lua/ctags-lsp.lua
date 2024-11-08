@@ -21,10 +21,10 @@ function M.setup(opts)
 				root_dir = util.find_git_ancestor,
 			},
 			docs = {
-				description = [[                                              
-https://github.com/netmute/ctags-lsp                                      
+				description = [[
+https://github.com/netmute/ctags-lsp
 
-CTags Language Server                                                     
+CTags Language Server
 				]],
 			},
 		}
