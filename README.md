@@ -1,20 +1,37 @@
-```lua
--- init.lua or main configuration file
+# ctags-lsp.nvim
 
-require('lazy').setup({
-  {
-    'plugins/ctags-lsp',  -- Path to the custom plugin file
-    lazy = true,
-    event = 'BufReadPost',
+Neovim configuration for [ctags-lsp](https://github.com/netmute/ctags-lsp)
+
+## Installation
+
+Get the language server:
+
+```
+brew install netmute/tap/ctags-lsp
+```
+
+Setup in neovim:
+
+```lua
+-- lazy.nvim
+{
+    "neovim/nvim-lspconfig",
+    dependencies = {
+        "netmute/ctags-lsp.nvim",
+        opts = {},
+    },
     config = function()
-      require('plugins.ctags-lsp').setup({
-        tagfiles = ".git/tags",  -- Single tagfile as a string
-        -- Or specify multiple tagfiles
-        -- tagfiles = { ".git/tags", "./tags" },
-        filetypes = { 'python', 'javascript' },  -- Optionally specify filetypes
-        settings = {},  -- Optionally specify additional LSP settings
-      })
+        local lspconfig = require("lspconfig")
+        lspconfig.ctags_lsp.setup({})
     end,
-  },
+}
+```
+
+By default the language server will attach to all filetypes.  
+Attach only to certain filetypes like this:
+
+```lua
+lspconfig.ctags_lsp.setup({
+    filetypes = { "ruby", "go" },
 })
 ```
