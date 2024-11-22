@@ -21,14 +21,13 @@ Setup in neovim:
         opts = {},
     },
     config = function()
-        local lspconfig = require("lspconfig")
-        lspconfig.ctags_lsp.setup({})
+        require("lspconfig").ctags_lsp.setup({})
     end,
 }
 ```
 
-By default the language server will attach to all filetypes.  
-Attach only to certain filetypes like this:
+It attaches to all filetypes by default.  
+Need it for specific filetypes only? It’s configurable:
 
 ```lua
 lspconfig.ctags_lsp.setup({
