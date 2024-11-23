@@ -16,10 +16,7 @@ Setup in neovim:
 -- lazy.nvim
 {
     "neovim/nvim-lspconfig",
-    dependencies = {
-        "netmute/ctags-lsp.nvim",
-        opts = {},
-    },
+    dependencies = "netmute/ctags-lsp.nvim",
     config = function()
         require("lspconfig").ctags_lsp.setup({})
     end,
