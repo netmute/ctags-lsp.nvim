@@ -2,6 +2,8 @@
 
 Neovim configuration for [ctags-lsp](https://github.com/netmute/ctags-lsp)
 
+<img width="642" alt="screenshot" src="https://github.com/user-attachments/assets/19cb348a-4788-4f6b-892c-b385c2b544e8">
+
 ## Installation
 
 Get the language server:
