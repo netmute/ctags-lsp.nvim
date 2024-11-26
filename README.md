@@ -2,7 +2,7 @@
 
 Neovim configuration for [ctags-lsp](https://github.com/netmute/ctags-lsp)
 
-<img width="642" alt="screenshot" src="https://github.com/user-attachments/assets/19cb348a-4788-4f6b-892c-b385c2b544e8">
+<img width="904" alt="Screenshot" src="https://github.com/user-attachments/assets/491dcc8e-3f74-465c-8657-6cd43a915b1f">
 
 ## Installation
 
