@@ -1,35 +1,21 @@
-# ctags-lsp.nvim
+# Deprecated!
 
-Neovim configuration for [ctags-lsp](https://github.com/netmute/ctags-lsp)
+The configuration provided by this repository was deprecated in Neovim 0.11+. 
 
-<img width="904" alt="Screenshot" src="https://github.com/user-attachments/assets/491dcc8e-3f74-465c-8657-6cd43a915b1f">
-
-## Installation
-
-Get the language server:
-
-```
-brew install netmute/tap/ctags-lsp
-```
-
-Setup in neovim:
+You can now simply configure ctags-lsp like this:
 
 ```lua
 -- lazy.nvim
 {
-    "neovim/nvim-lspconfig",
-    dependencies = "netmute/ctags-lsp.nvim",
-    config = function()
-        require("lspconfig").ctags_lsp.setup({})
-    end,
-}
-```
-
-It attaches to all filetypes by default.  
-Need it for specific filetypes only? It’s configurable:
-
-```lua
-lspconfig.ctags_lsp.setup({
-    filetypes = { "ruby", "go" },
-})
+	"neovim/nvim-lspconfig",
+	ft = { "ruby", "python" },
+	config = function()
+		vim.lsp.config("ctags_lsp", {
+			cmd = { "ctags-lsp" },
+			filetypes = { "ruby", "python" },
+			root_dir = vim.uv.cwd(),
+		})
+		vim.lsp.enable("ctags_lsp")
+	end,
+},
 ```
